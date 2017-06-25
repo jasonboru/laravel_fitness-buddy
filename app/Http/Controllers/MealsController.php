@@ -50,10 +50,20 @@ class MealsController extends Controller
         //create new meal
         //taking advantage of the fact that we've set name to be mass-assignable
 
-        $meal = new Meal($request->all());
-        $user->meals()->save($meal);
+        //in-class example code***************************************
+        //************************************************************
+        //$meal = new Meal($request->all());
+        //$user->meals()->save($meal);
 
         // send a Response
+
+        //return redirect()->action("MealsController@show", $meal->id);
+        //************************************************************
+
+        $meal = new Meal;
+        $meal->name = $request->input('name');
+        $meal->user_id = auth()->user()->id;
+        $meal->save();
 
         return redirect()->action("MealsController@show", $meal->id);
     }
