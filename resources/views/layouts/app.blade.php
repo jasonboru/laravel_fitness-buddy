@@ -37,7 +37,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         <li>
-                          <a href="/home">Home</a>
+                          <a href="/dashboard">Dashboard</a>
                         </li>
                         <li>
                           <a href="/meals/create">Add Meal</a>

@@ -5,7 +5,12 @@
       <div class="row">
           <div class="col-md-8 col-md-offset-2">
               <div class="panel panel-default">
-                  <div class="panel-heading"><h2>{{$meal->name}}</h2><small>{{$meal->created_at}}</small></div>
+                  <div class="panel-heading">
+                    <h3 style="color:#777" >Add Foods To:</h3>
+                    <hr>
+                    <h2>{{$meal->name}}</h2>
+                    <small>{{$meal->created_at}}</small>
+                  </div>
 
                   <div class="panel-body">
 

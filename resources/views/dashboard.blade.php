@@ -19,7 +19,7 @@
                       </tr>
                       @foreach($meals as $meal)
                         <tr>
-                          <td>{{$meal->name}}</td>
+                          <td><a href="/meals/{{$meal->id}}">{{$meal->name}}</a></td>
                           <td><a href="/meals/{{$meal->id}}/edit" class="btn btn-default">Edit</a></td>
                         </tr>
                       @endforeach
