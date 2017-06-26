@@ -9,12 +9,12 @@
                     <h3 style="color:#777" >Add Foods To:</h3>
                     <hr>
                     <h2>{{$meal->name}}</h2>
-                    <small>{{$meal->created_at}}</small>
+                    <small>Meal created at {{$meal->created_at->format('M d, Y - H:i')}}</small>
                   </div>
 
                   <div class="panel-body">
 
-                      <form action="/addmeal/{{ $meal->id }}/foods" method="POST" class="form-horizontal">
+                      <form action="/meals/{{ $meal->id }}/foods" method="POST" class="form-horizontal">
                           {{ csrf_field() }}
 
                           <!-- Task Name -->
@@ -22,7 +22,7 @@
                               <label for="food_name" class="col-sm-3 control-label">Food Name</label>
 
                               <div class="col-sm-6">
-                                  <input type="text" name="food_name" id="Food-name" class="form-control" placeholder="Food Name">
+                                  <input type="text" name="name" id="Food-name" class="form-control" placeholder="Food Name">
                               </div>
                           </div>
                           <div class="form-group">

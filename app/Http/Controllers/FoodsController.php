@@ -34,8 +34,22 @@ class FoodsController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+      $this->validate($request, [
+        'name'=> 'required',
+        'protein'=> 'required',
+        'carbohydroates'=> 'required',
+        'fat'=> 'required',
+      ]);
+
+      $food = new Food;
+      $food->name = $request->input('name');
+      $food->protein = $request->input('protein');
+      $food->carbohydrates = $request->input('carbohydrates');
+      $food->fat = $request->input('fat');
+      $food->meal_id = 8; //Meal::find($id);
+      $food->save();
+
+      return redirect()->action("MealsController@show", $food->meal_id);
 
     /**
      * Display the specified resource.
